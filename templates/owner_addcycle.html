@@ -1,0 +1,121 @@
+{% include 'ownerheader.html'%}
+
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+    <script type="text/javascript">
+        // window.onload = function () {
+          function myFunction(){
+            var mapOptions = {
+                center: new google.maps.LatLng(9.9763482, 76.286272),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            google.maps.event.addListener(map, 'click', function (e) {
+                alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+              document.getElementById('lat').value = e.latLng.lat();
+                document.getElementById('lon').value = e.latLng.lng();
+           
+
+            });
+        }
+    </script>
+
+ <section id="hero" style="height: 1000px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);height: 1000px">
+            <div class="carousel-container">
+              <div class="carousel-content">
+
+
+              	
+<center>
+	<h2>Add Cycle </h2>
+	<form  method="post" enctype="multipart/form-data">
+		
+		<table  class="table" style="width: 500px;color: white">
+			<tr>
+				<th>Station</th>
+				<td><select name="sid" required>
+					<option>Select</option>
+
+					{% for row in data['stationdrop'] %}
+					<option value="{{row['s_id']}}">{{row['sname']}}</option>
+					{% endfor  %}
+
+				</select></td>
+			</tr>
+
+			<tr>
+				<th>Cycle</th>
+				<td><input type="text" class="form-control" required="" name="cycle"></td>
+			</tr>
+			<tr>
+				<th>Image</th>
+				<td><input type="file" class="form-control" required="" name="imgg"></td>
+			</tr>
+
+			<tr>	
+           <th>Latitude</th>
+            <td><input type="text" name="lat" readonly=""  class="form-control" id="lat">
+            <a class="btn btn-success" onclick="myFunction();"><b>View Map</b></a>
+            </td>
+        </tr>
+         <tr>
+            <th>Longitude</th>
+            <td ><br><input type="text" name="lon" readonly="" class="form-control" id="lon"></td>
+        </tr>
+			
+			<tr>
+				<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="Addcycle"></td>
+			</tr>
+		</table>
+
+		<table>
+       <tr>
+
+          <td>
+	     <div id="dvMap" style="width: 600px; height: 400px"></div>
+
+	   </td>
+
+</tr>
+    </table>
+		</form>
+	</center>
+</div></div></div></div></div></div></section>
+	<center>
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>Slno</th>
+				<th>Status</th>
+				<th>station Name</th>
+				<th>Cycle</th>
+				<th>Location</th>
+					<th>Image</th>
+
+			</tr>
+			{%for row in data['cycle']%}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['status']}}</td>
+				<td>{{row['sname']}}</td>
+				<td>{{row['cycle_name']}}</td>
+
+<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{row['latitude'] }},{{row['longitude'] }}">Click Me</a></td>
+				<td><img src="/{{row['image']}}" width="100" height="100"></td>
+			</tr>
+			{% endfor %}
+		</table>
+
+	</center>
+{% include 'footer.html'%}

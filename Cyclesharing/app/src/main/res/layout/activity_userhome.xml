@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@drawable/images"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Userhome">
+
+    <Button
+        android:id="@+id/Addwallet"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Addwallet"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="520dp" />
+    <Button
+        android:id="@+id/viewcycle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View Cycle Station"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+
+
+    <Button
+        android:id="@+id/cycle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Book Cycle"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <Button
+        android:id="@+id/viewbook"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View Bookings"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="410dp" />
+
+
+
+    <Button
+        android:id="@+id/Viewpayment"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Viewpayment"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="520dp" />
+
+
+
+
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="561dp" />
+
+
+</LinearLayout>

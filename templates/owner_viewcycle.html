@@ -1,0 +1,44 @@
+	
+{% include 'ownerheader.html'%}
+ <section id="hero" style="height: 200px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	</div></div></div></div></div></div></section>
+	<center>
+		<h1>View Cycle</h1>
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>Slno</th>
+				<th>Status</th>
+				<th>station Name</th>
+				<th>Cycle</th>
+				<th>Location</th>
+					<th>Image</th>
+			</tr>
+			{%for row in data['cy']%}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['status']}}</td>
+				<td>{{row['sname']}}</td>
+				<td>{{row['cycle_name']}}</td>
+
+<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{row['latitude'] }},{{row['longitude'] }}">Click Me</a></td>
+				
+				<td><a  class="btn btn-success" href="?action=remove&cid={{row['c_id']}}">Remove</a></td>
+
+			</tr>
+			{% endfor %}
+		</table>
+
+	</center>
+
+	{% include 'footer.html'%}

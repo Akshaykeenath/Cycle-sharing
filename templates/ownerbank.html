@@ -1,0 +1,50 @@
+{% include 'ownerheader.html'%}
+
+
+
+
+ <section id="hero" style="height: 1000px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);height: 1000px">
+            <div class="carousel-container">
+              <div class="carousel-content">
+
+
+              	
+<center>
+	<h2>Add Account </h2>
+	<form  method="post" enctype="multipart/form-data">
+		
+		<table  class="table" style="width: 500px;color: white">
+			<tr>
+				<th>Card Number</th>
+				<td><input type="number" maxlength="16" pattern="[0-9]{16}" name="card"></td>
+			</tr>
+
+			<tr>
+				<th>Expdate</th>
+				<td><input type="date" class="form-control" required="" name="date"></td>
+			</tr>
+			<tr>
+				<th>Amount</th>
+				<td><input type="text" class="form-control" value="{{data['amt']}}" required="" name="amt" disabled></td>
+			</tr>
+	
+			<tr>
+				<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="Addaccount"></td>
+			</tr>
+		</table>
+
+		
+		</form>
+	</center>
+</div></div></div></div></div></div></section>
+	
+{% include 'footer.html'%}

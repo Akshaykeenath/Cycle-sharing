@@ -1,0 +1,51 @@
+{% include 'adminheader.html'%}
+
+ <section id="hero" style="height: 200px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	</div></div></div></div></div></div></section>
+<center>
+	<h1>View Booking</h1>
+	<table  class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>Rider Name</th>
+			
+			<th>Hours</th>
+			<th>Amount</th>
+			<th>Status</th>
+			<th>Image</th>
+			<th>location</th>
+			
+			
+		</tr>
+		{% for row in data['book']%}
+		<tr>
+			<td>{{loop.index}}</td>
+				<td>{{row['f_name']}}</td>
+				
+				<td>{{row['hours']}}</td>
+				<td>{{row['amount']}}</td>
+			<td>{{row['bstatus']}}</td>
+				<td><img src="/{{row['image']}}" width="100" height="100"></td>
+			{% if row ['bstatus']=="Paid"%}
+			<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{row['latitude'] }},{{row['longitude'] }}">Click Me</a></td>
+			{% endif %}
+
+			
+	
+	
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}

@@ -1,0 +1,42 @@
+
+{% include 'adminheader.html'%}
+ <section id="hero" style="height: 200px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	</div></div></div></div></div></div></section>
+<center>
+	<h1>View Complaints</h1>
+	<table  class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+		   <th>Rider Name</th>
+		   	<th>Owner ID</th>
+		    	<th>Owner Name</th>
+		     		<th>Cycle Name</th>
+		     			<th>Complaint</th>
+		 
+		</tr>
+		{% for row in data['complaints']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['rname']}}</td>
+			<td>{{row['own_id']}}</td>
+			<td>{{row['oname']}}</td>
+			<td>{{row['cname']}}</td>
+			<td>{{row['complaint']}}</td>
+			
+		
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}

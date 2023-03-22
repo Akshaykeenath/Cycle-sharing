@@ -1,0 +1,31 @@
+{% include 'ownerheader.html'%}
+
+ <section id="hero" style="height: 200px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	</div></div></div></div></div></div></section>
+<center>
+	<h1>View Wallet</h1>
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>Amount</th>
+			</tr>
+			{%for row in data['wall']%}
+			<tr>
+				<td>{{row['amount']}}</td>
+				<td><a class="btn btn-primary" href="ownerbank?wid={{row['w_id']}}&amt={{row['amount']}}">Add To Account</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+
+	</center>
+{% include 'footer.html'%}

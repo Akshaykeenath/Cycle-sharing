@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/images"
+    android:orientation="vertical"
+    tools:context=".BookCycle">
+
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Now"
+        android:textSize="30dp"
+
+        android:textStyle="bold"
+        android:textColor="#ffff"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+android:layout_marginLeft="20dp"
+        android:textColorHint="#0B0909"
+        android:textColor="#120F0F"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+    <EditText
+        android:id="@+id/Amonut"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+
+        android:textColorHint="#ffff"
+        android:textColor="#ffff"
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="Amount"
+        android:gravity="center"
+
+        android:focusableInTouchMode="false"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <EditText
+        android:id="@+id/hours"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+
+
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="how many hours do you want"
+        android:gravity="center"
+        android:textColorHint="#ffff"
+        android:textColor="#ffff"
+
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+
+    <EditText
+        android:id="@+id/total"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+
+
+        android:layout_marginTop="30dp"
+        android:inputType="textPersonName"
+        android:hint="total"
+        android:gravity="center"
+        android:textColorHint="#ffff"
+        android:textColor="#ffff"
+        android:focusableInTouchMode="false"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <Button
+        android:id="@+id/booknow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="541dp" />
+</LinearLayout>

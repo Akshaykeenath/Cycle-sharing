@@ -1,0 +1,37 @@
+{% include 'adminheader.html'%}
+
+ <section id="hero" style="height: 200px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	</div></div></div></div></div></div></section>
+<center>
+	<h1>View Paymnet Owner</h1>
+	<table  class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>Amount</th>
+			<th>Owner</th>
+			<th>date</th>
+			
+		</tr>
+		{% for row in data['payown']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['amount']}}</td>
+			<td>{{row['f_name']}}</td>
+			<td>{{row['date']}}</td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}

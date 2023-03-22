@@ -1,0 +1,72 @@
+{% include 'adminheader.html'%}
+ <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+<center>
+	<h2>Manage Cycle Station</h2>
+	<form  method="post">
+		{% if data['station']%}
+		<table  class="table" style="width: 500px;color: white">
+			<tr>
+				<th>Station Name</th>
+				<td><input type="text" name="sname" class="form-control" required=""  value="{{data['station'][0]['sname']}}"></td>
+			</tr>
+			
+			<tr>
+				<th>Location</th>
+				<td><input type="text" name="location" class="form-control" required=""  value="{{data['station'][0]['location']}}"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="update"></td>
+			</tr>
+		</table>
+		{% else %}
+		<table  class="table" style="width: 500px;color: white">
+			<tr>
+				<th>Station Name</th>
+				<td><input type="text" name="sname" class="form-control" required=""  ></td>
+			</tr>
+			
+			<tr>
+				<th>Location</th>
+				<td><input type="text" name="location" class="form-control" required="" ></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="cycle"></td>
+			</tr>
+		</table>
+		{% endif %}
+	</form>
+</center>
+</div></div></div></div></div></div></section>
+<center>
+	<h1>View Cycle Station</h1>
+	<table  class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>Station Name</th>
+			
+			<th>location</th>
+		</tr>
+		{% for row in data['cstation']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['sname']}}</td>
+			
+			<td>{{row['location']}}</td>
+			<td><a class="btn btn-success" href="?action=delete&cid={{row['s_id']}}">Delete</a></td>
+			<td><a class="btn btn-success" href="?action=update&cid={{row['s_id']}}">Update</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}

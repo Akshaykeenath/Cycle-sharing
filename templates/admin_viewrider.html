@@ -1,0 +1,49 @@
+
+{% include 'adminheader.html'%}
+ <section id="hero" style="height: 200px">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(/static/assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	</div></div></div></div></div></div></section>
+<center>
+	<h1>View Riders</h1>
+	<table  class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+		   <th>first Name</th>
+		    <th>last Name</th>
+		     <th>house Name</th>
+		   	<th>City</th>
+		   	<th>Street</th>
+		 
+		</tr>
+		{% for row in data['ride']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['f_name']}}</td>
+			<td>{{row['l_name']}}</td>
+			<td>{{row['hname']}}</td>
+			<td>{{row['city']}}</td>
+			<td>{{row['street']}}</td>
+			{% if row['user_type']=="pending"%}
+			<td><a class="btn btn-success" href="?action=accept&rid={{row['login_id']}}">Accept</a></td>
+			<td><a class="btn btn-success"  href="?action=reject&rid={{row['login_id']}}">Reject</a></td>
+			{% endif %}
+			{% if row['user_type']=="Rider"%}
+			<td><a class="btn btn-success" href="?action=remove&rid={{row['login_id']}}">Remove</a></td>
+			{% endif %}
+			
+		
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}
